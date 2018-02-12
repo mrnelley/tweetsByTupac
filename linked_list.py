@@ -1,13 +1,19 @@
 class Node(object):
-    """docstring for Node."""
     def __init__(self, data = None):
         self.data = None
         self.next = None
+    def __repr__(self):
+        return 'Node({!r})'.format(self.data)
 
-class linked_list(object):
-    def __init__(self):
-        self.head = None
-        self.tail = None
+class Linked_list(object):
+
+    def __init__(self, items=None):
+        self.head = None  # First node
+        self.tail = None  # Last node
+        self.size = 0
+        if items is not None:
+            for item in items:
+                self.append(item)
 
     def is_empty(self):
         if not self.head:
@@ -15,22 +21,11 @@ class linked_list(object):
         else
             return False
 
-    def append(self, data):
-
-        new_node = Node(data)
-
-        if not self.head:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            self.tail.next = new_node
-            self.tail = new_node
-
-    def prepend(self, data):
-
-        new_node = Node(data)
-
-        if not self.head:
+    # def prepend(self, data):
+    #
+    #     new_node = Node(data)
+    #
+    #     if not self.head:
 
 # later TODO:
 def test_delete_with_3_items(self):
