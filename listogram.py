@@ -1,13 +1,9 @@
-#!python
-
 from __future__ import division, print_function  # Python 2 and 3 compatibility
 
 
 class Listogram(list):
-    """Listogram is a histogram implemented as a subclass of the list type."""
 
     def __init__(self, word_list=None):
-        """Initialize this histogram as a new list and count given words."""
         super(Listogram, self).__init__()  # Initialize this as a new list
         # Add properties to track useful word counts for this histogram
         self.types = 0  # Count of distinct word types in this histogram
@@ -18,7 +14,6 @@ class Listogram(list):
                 self.add_count(word)
 
     def add_count(self, word, count=1):
-        """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
 
     def frequency(self, word):
