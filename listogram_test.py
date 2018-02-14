@@ -1,5 +1,6 @@
 #!python
 
+from pprint import pprint
 from listogram import Listogram
 import unittest
 # Python 2 and 3 compatibility: unittest module renamed this assertion method
@@ -56,6 +57,7 @@ class ListogramTest(unittest.TestCase):
         histogram.add_count('blue', 3)
         histogram.add_count('fish', 4)
         histogram.add_count('food', 5)
+        pprint(histogram)
         # Verify updated frequency count of all words
         assert histogram.frequency('one') == 1
         assert histogram.frequency('two') == 3

@@ -17,7 +17,7 @@ class DictogramTest(unittest.TestCase):
     def test_entries(self):
         dictogram = Dictogram(self.fish_words)
         # Verify histogram as dictionary of entries like {word: count}
-        assert len(dictogram) == 5
+        assert dictogram.types == 5
         assert dictogram == self.fish_dict
         self.assertCountEqual(dictogram, self.fish_dict)  # Ignore item order
         # Verify histogram as list of entries like [(word, count)]

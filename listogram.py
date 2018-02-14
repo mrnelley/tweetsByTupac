@@ -14,21 +14,54 @@ class Listogram(list):
                 self.add_count(word)
 
     def add_count(self, word, count=1):
-        # TODO: Increase word frequency by count
+        # lets just shorten this to key_word
+        key_word = str(word)
+        i = self._index(key_word)
+        # if there is no index for the word in the object
+        # i.e. if the word does not exist in the object
+        if i is not None:
+            # if the key word is defined at index i of object
+            value_of_key = self[i][1]
+            # reset object with added count
+            self[i] = (key_word, value_of_key + count)
+            # print key_word
+        else:
+            # add the key word with a value pair of 1
+            self.append((key_word, count))
+            # increment the number of unique words in the object
+            self.types += 1
+        self.tokens += count
 
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
-        # TODO: Retrieve word frequency count
+        i = self._index(word)
+
+        if i is None:
+            return 0
+        else:
+            return self[i][1]
 
     def __contains__(self, word):
         """Return boolean indicating if given word is in this histogram."""
-        # TODO: Check if word is in this histogram
+        key_word = str(word)
+
+        if self._index(key_word) is not None:
+            return True
+        else:
+            False
 
     def _index(self, target):
         """Return the index of entry containing given target word if found in
         this histogram, or None if target word is not found."""
-        # TODO: Implement linear search to find index of entry with target word
 
+        # target = word to find
+
+        index_of_word = None
+        for index, tup in enumerate(self):
+            if tup[0] == target:
+                index_of_word = index
+            # else
+        return index_of_word
 
 def print_histogram(word_list):
     print('word list: {}'.format(word_list))
