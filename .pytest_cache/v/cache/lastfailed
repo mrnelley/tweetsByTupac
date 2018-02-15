@@ -1,0 +1,8 @@
+{
+  "hash_table_test.py": true, 
+  "linked_list_test.py::LinkedListTest::test_delete_with_3_items": true, 
+  "linked_list_test.py::LinkedListTest::test_delete_with_5_items": true, 
+  "linked_list_test.py::LinkedListTest::test_find": true, 
+  "linked_list_test.py::LinkedListTest::test_init_with_list": true, 
+  "linked_list_test.py::LinkedListTest::test_length_after_delete": true
+}
